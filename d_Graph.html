@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그래프 표시</title>
+</head>
+<body>
+
+  <h1>그래프 표시</h1>
+
+  <div id="imageContainer"></div>
+
+  <script>
+    // 서버에서 받은 데이터를 가져옴 (예시)
+    var receivedData = {
+      image1: "base64_encoded_image1_here",
+      image2: "base64_encoded_image2_here"
+    };
+
+    // 이미지를 표시할 컨테이너 엘리먼트
+    var imageContainer = document.getElementById("imageContainer");
+
+    // 이미지 생성 및 표시
+    function displayImage(base64Data) {
+      var img = new Image();
+      img.src = "data:image/png;base64," + base64Data;
+      imageContainer.appendChild(img);
+    }
+
+    // 서버에서 받은 데이터의 이미지 표시
+    displayImage(receivedData.image1);
+    displayImage(receivedData.image2);
+  </script>
+
+</body>
+</html>
