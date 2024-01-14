@@ -6,7 +6,7 @@ from c_Graph_and_Html import Excel_to_Graph
 
 app = Flask(__name__)
 
-@app.route('/api/submitUserData', methods=['POST'])
+@app.route('/bc_app', methods=['POST'])
 def submit_user_data():
     try:
         user_data = request.json
