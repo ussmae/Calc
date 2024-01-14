@@ -12,7 +12,7 @@ def submit_user_data():
         user_data = request.json
         Pb = input_to_Excel(user_data)
         img1, img2 = Excel_to_Graph(Pb)
-        return jsonify({'message': 'Data received successfully', 'data': user_data}), 200
+         return jsonify({'message': 'Data received successfully', 'img1': img1, 'img2': img2}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
